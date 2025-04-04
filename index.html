@@ -14,6 +14,7 @@
     <button class="start_button" id="stopwatchButton">
         <span id="buttonText">勉強を始める</span>
     </button>
+    <a href="https://www.youtube.com/">yt</a>
     <br>
     <h1 class="list">｜記録</h1>
     <div id="totalStudyTime">　　合計勉強時間： 0 時間</div>
@@ -26,5 +27,16 @@
     <button class="settings-button" onclick="window.location.href='settings.html'">設定</button>
 
     <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./service-worker.js').then((registration) => {
+                  console.log('Service Worker registered with scope:', registration.scope);
+              }).catch((error) => {
+                  console.log('Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
 </body>
 </html>
