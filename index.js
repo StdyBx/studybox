@@ -24,12 +24,49 @@ function renderTasks() {
     checkTasks();  // タスク状態を確認してボタンを表示
 }
 
-// チェック状態を確認して「YouTube解禁」ボタンを表示
+//ここから
 function checkTasks() {
     const tasks = loadTasks();
     const allChecked = tasks.every(task => task.checked); // すべてのタスクがチェックされているか確認
     unlockButton.style.display = allChecked ? 'block' : 'none'; // すべてのタスクがチェックされていればボタンを表示
+
+    // すべてのタスクがチェックされていたらYouTubeを解禁
+    if (allChecked) {
+        unlockYouTube();
+        removeYouTubeRestriction(); // YouTubeのアクセス制限を解除
+    } else {
+        setYouTubeRestriction(); // タスクが完了するまではYouTubeを制限
+    }
 }
+// ページが読み込まれた時にURLをチェックしてリダイレクト
+window.addEventListener('load', function() {
+    const tasks = loadTasks();
+    const allChecked = tasks.every(task => task.checked);
+
+    // タスクが完了していない場合、youtube.comへのアクセスをgoogle.comにリダイレクト
+    if (!allChecked && window.location.href.includes('youtube.com')) {
+        alert("YouTubeへのアクセスはタスク完了後に解禁されます。");
+    }
+
+    // ページ再読み込み後にタスクをレンダリング
+    renderTasks();
+});
+
+// YouTubeへのリンククリックを監視
+document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function(event) {
+        const url = event.target.href;
+        if (url && url.includes('youtube.com')) {
+            // タスクが完了していない場合はgoogle.comにリダイレクト
+            const tasks = loadTasks();
+            const allChecked = tasks.every(task => task.checked);
+            if (!allChecked) {
+                event.preventDefault(); // YouTubeへの遷移を防ぐ
+                alert("YouTubeはまだ解禁されていません。google.comにリダイレクトします。");
+            }
+        }
+    });
+});//ここまで
 
 // タスクをローカルストレージに保存
 function saveTasks(tasks) {
