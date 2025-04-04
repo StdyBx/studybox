@@ -1,0 +1,97 @@
+body {
+    font-family: Montserrat, sans-serif, Oswald;
+    text-align: left;
+    padding: 20px;
+    background-color: rgb(243, 243, 243);
+}
+.task {
+    margin: 10px 0;
+}
+
+.list{
+    font-size:150%;
+}
+
+.textbook{
+    font-size:100%;
+}
+
+.start_button {
+    font-family: Montserrat, sans-serif;
+    width: 90vw; /* 画面幅の90% */
+    height: 100px; /* ボタンの高さを指定 */
+    background: #538AF6;
+    border-radius: 15px;
+    background-size: contain; /* 画像の縦横比を保ちながら収める */
+    background-position: center center; /* 背景画像を中央に配置 */
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 200%;
+    font-weight: 800;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに影を追加 */
+    align-items: center; /* ボタン内で縦方向の中央揃え */
+    justify-content: center; /* 横方向の中央揃え */
+    text-align: center;
+}
+
+
+#unlockButton {
+    display: none;
+    width: 90vw;
+    height: 50px;
+    background: #ff4141;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 90px;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.settings-button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 90vw;
+    height: 50px;
+    border-radius: 10px;
+    background: gray;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに影を追加 */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fire{
+    width: 25px;
+    position: absolute;
+    top: 213px;
+}
+
+.studyprogr{
+    width: 90vw;
+    height: 30px;
+    appearance: none;
+    padding:10px;
+}
+progress::-webkit-progress-bar {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+progress::-webkit-progress-value {
+    background-color: #538AF6;
+    border-radius: 10px;
+}

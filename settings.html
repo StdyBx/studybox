@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBox | 設定ページ</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <h1>Settings</h1>
+    
+    <div>
+        <input type="text" id="newTaskInput" placeholder="新しい教材を追加" />
+        <button onclick="addTask()" class="add">追加</button>
+    </div>
+    
+    <ul id="taskList"></ul>
+    
+    <button id="saveButton" onclick="saveTasks()">保存</button>
+    <br>
+    <button id="backButton" onclick="goBack()">戻る</button>
+
+    <script src="settings.js"></script>
+</body>
+</html>
