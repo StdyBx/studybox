@@ -3,6 +3,8 @@ How to use StudyBox
 
 導入までの流れ
 iOS純正アプリ「ショートカット」にて以下のようなショートカットを組む。
+
+OpenYouTube
 ```
-Hello World
+<https://stdybx.github.io/studybox/viewer.html>の内容を取得
 ```
