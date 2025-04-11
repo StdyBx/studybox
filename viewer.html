@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Status</title>
+</head>
+<body>
+    <div id="status"></div>
+
+    <script>
+        // 曜日の配列（mon, tue, wed, ... , sun）
+        const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+        // 今日の日付から曜日を取得
+        const today = new Date().toLocaleDateString(); // 0:日曜日, 1:月曜日, ..., 6:土曜日
+        const todayString = weekdays[today]; // 今日の曜日を文字列に変換
+
+        // localStorageから保存された完了日を取得
+        const completedDate = localStorage.getItem('tasksCompletedDate');
+
+        // 状態を表示するためのdiv要素を取得
+        const statusElement = document.getElementById('status');
+
+        // completedDateとtodayStringが一致する場合、「done」を表示、それ以外は「not yet」を表示
+        if (completedDate === today) {
+            statusElement.textContent = 'done';
+        } else {
+            statusElement.textContent = 'not yet';
+        }
+    </script>
+    <button>
+        <a href="index.html">戻る</a>
+    </button>
+</body>
+</html>

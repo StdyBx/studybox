@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBox | 日々の勉強を管理。</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon.png">
+
+</head>
+<body>
+    <button class="start_button" id="stopwatchButton">
+        <span id="buttonText">勉強を始める</span>
+    </button>
+    <br>
+    <h1 class="list">｜記録</h1>
+    <div id="totalStudyTime">　　合計勉強時間： 0 時間</div>
+    <img src="fire.png" class="fire">
+    <progress id="studyProgress" class="studyprogr" max="0.1" value="100"></progress>
+    <h1 class="list">｜教材リスト</h1>
+    <div id="tasks" class="textbook"></div>
+    <br>
+    <button id="unlockButton" onclick="unlockYouTube()" class="ytbtn">▶ YouTube</button>
+    <button class="settings-button" onclick="window.location.href='settings.html'">設定</button>
+    <button><a href="viewer.html">stats</a></button>
+
+    <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./service-worker.js').then((registration) => {
+                  console.log('Service Worker registered with scope:', registration.scope);
+              }).catch((error) => {
+                  console.log('Service Worker registration failed:', error);
+              });
+          });
+        }
+      </script>
+</body>
+</html>

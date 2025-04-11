@@ -1,0 +1,57 @@
+body {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+}
+
+#newTaskInput {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    height:14px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background: rgb(255, 41, 41);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    margin: 10px 0;
+}
+
+button#saveButton {
+    background: rgb(23, 150, 255);
+    width: 50vw;
+}
+
+button#backButton {
+    background: gray;
+    width: 50vw;
+}
+
+.add{
+    background: rgb(23, 150, 255);
+    width:15vw;
+}
+
+.dayselect{
+    padding: 10px;
+    margin-top: 10px;
+    background: rgb(23, 150, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
