@@ -13,7 +13,7 @@ YouTubeが開かれた時、常にショートカット「Blocker」を実行
 
 ＊アクセスの許可などが要求された場合は許可をするようにしてください。
 
-アプリ（https://stdybx.github.io/studybox/）にアクセスし、教材情報を登録。
+アプリ（https://stdybx.github.io/studybox/ ）にアクセスし、教材情報を登録。
 
 チェックが全て完了されるとYouTubeが見れるようになります！
 全てチェックされていない場合はYouTubeが開かれると自動的に閉じるようになっています。
