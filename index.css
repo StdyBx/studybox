@@ -34,6 +34,8 @@ body {
     align-items: center; /* ボタン内で縦方向の中央揃え */
     justify-content: center; /* 横方向の中央揃え */
     text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
 
