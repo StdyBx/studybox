@@ -194,4 +194,18 @@ window.onload = () => {
     buttonText.innerHTML = "勉強を開始";
     running = false;
     clearInterval(stopwatchInterval);
+    
+    const completedDate = localStorage.getItem('tasksCompletedDate');
+    fetch(`https://task-status-api.onrender.com/get-task-status?completedDate=${completedDate}`)
+    .then(res => res.json())
+      .then(data => {
+        console.log('APIの応答:', data.status);
+        const statusElement = document.getElementById('status');
+        if (statusElement) {
+          statusElement.textContent = data.status ? 'true' : 'false';
+        }
+      })
+      .catch(err => {
+        console.error('APIエラー:', err);
+      });
 };
